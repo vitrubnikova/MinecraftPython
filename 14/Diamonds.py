@@ -77,3 +77,13 @@ while game:
     if timer >= 15:
         craft.setBlock(xt, yt, zt, block.TNT.id)
         craft.setBlock(xt, yt + 1, zt, block.FIRE.id)
+
+    # Если игрок упал ниже уровня 90, игра заканчивается
+    if pos.y < 90:
+        craft.postToChat("Игра окончена")
+        craft.setBlocks(s.x - 10, 90, s.z - 10, s.x + 10, 90, s.z + 10, block.AIR.id)
+
+    craft.postToChat("------------------Итоги---------------------")
+    craft.postToChat("Набрано баллов: " + str(points))
+    craft.postToChat("Сыграно секунд: " + str(timer))
+    craft.postToChat("------------------------------------")
