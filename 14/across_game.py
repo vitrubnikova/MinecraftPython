@@ -84,7 +84,7 @@ while True:
         # вывод в чат
         mc.postToChat("Scores: " + str(scores))
         mc.postToChat(f"Timer: {timer}")
-        mc.postToChat("Level: ")
+        mc.postToChat(f"Level: {level}")
         classics(x, y, z)
 
     # условие, чтобы закончить игру (например, по сравнению с высотой игрока)
@@ -94,14 +94,11 @@ while True:
         # касание блока = высота игрока - 1
         # высота игрока = 52
         # если 51 < 49
-        pass
-    '''
-    внутри условия сделать вывод в чат следующих строк:
-    Total:
-    Scores: с соответствующим значением
-    Timer: с соответствующим значением
-    Level: с соответствующим значением
-    сделать площадку из воздуха, чтобы почистить пространство
-    вывести в чат прощальную строку
-    выйти из цикла
-    '''
+        mc.postToChat("Total:")
+        mc.postToChat("Scores: " + str(scores))
+        mc.postToChat(f"Timer: {timer}")
+        mc.postToChat("Level: " + str(level))
+        mc.setBlocks(xp - 1, yp - 1, zp, xp + 1, yp - 1, zp + 6, block.AIR.id)
+        mc.postToChat("GG")
+        # выход из цикла
+        break
