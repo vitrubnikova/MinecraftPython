@@ -22,7 +22,7 @@ def classics(x, y, z):
     mc.setBlock(x + 1, y - 1, z + 4, block.DIAMOND_BLOCK.id)
     mc.setBlock(x, y - 1, z + 5, block.DIAMOND_BLOCK.id)
 
-mc.player.setTilePos(xp, yp + 2, zp)
+mc.player.setTilePos(xp, yp + 2, zp)  # игрок стоит над площадкой с классиками
 
 classics(xp, yp, zp)
 
@@ -87,7 +87,15 @@ while True:
         mc.postToChat("Level: ")
         classics(x, y, z)
 
-    '''добавить условие, чтобы закончить игру (например, по сравнению с высотой игрока)
+    # добавить условие, чтобы закончить игру (например, по сравнению с высотой игрока)
+    if y < yp - 1:
+        # yp = 50
+        # у = касание блока
+        # касание блока = высота игрока - 1
+        # высота игрока = 52
+        # если 51 < 49
+        pass
+    '''
     внутри условия сделать вывод в чат следующих строк:
     Total:
     Scores: с соответствующим значением
